@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operator Menu</title>
+</head>
+<body>
+{% for service, wait in operator_menu %}
+<div>{{service}} queue: {{ wait }}</div>
+{% endfor %}
+
+
+<form method="post">{% csrf_token %}
+  <button type="submit">Process next</button>
+</form>
+</body>
+</html>
